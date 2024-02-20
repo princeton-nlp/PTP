@@ -1,0 +1,9 @@
+{
+  "do_convert_rgb": true,
+  "do_normalize": false,
+  "concat_coord": true,
+  "patch_size": {
+    "height": 16,
+    "width": 16
+  }
+}
