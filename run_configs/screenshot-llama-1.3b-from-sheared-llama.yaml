@@ -1,0 +1,64 @@
+
+# Path
+config_name: princeton-nlp/Sheared-LLaMA-1.3B
+model_name_or_path: princeton-nlp/Sheared-LLaMA-1.3B
+output_dir: result/my-screenshot-llama-1.3b-from-sheared-llama
+run_name: my-screenshot-llama-1.3b-from-sheared-llama
+
+# Dataset
+streaming_dataset: true
+streaming_train_root: data/sheared-llama-rp/for_ft/
+streaming_val_root: data/sheared-llama-rp/eval/
+streaming_remote: false
+block_size: 512
+
+# Speedup
+flash_attn: false
+hf_flash_attn2: true
+dataloader_num_workers: 8
+bf16: true
+
+# Logging
+do_eval: true
+do_train: true
+eval_steps: 5000 
+evaluation_strategy: steps
+save_steps: 10000 # 1B
+save_strategy: steps
+save_total_limit: 20
+log_eval_image_pred: true
+logging_steps: 1
+
+# Rendering
+rendered_as_target: true
+replace_new_line: true
+add_black_patch: false
+add_prefix: false
+
+# Image size
+font_size: 10
+line_space: 6
+height: 16
+width: 8192
+patch_height: 16
+patch_width: 16
+
+# Length
+block_size: 512 # Total text tokens (split into 256 + 256)
+ar_image_block_size: 256 # Text tokens rendered as screenshot
+total_block_size: 768 # Total length of patch tokens (~512) + text (~256)
+
+# Optimization
+lr_scheduler_type: "cosine"
+max_steps: 50000 # 1B
+per_device_eval_batch_size: 32
+per_device_train_batch_size: 8
+gradient_accumulation_steps: 4 # for 8gpus, this leads to bsz=256
+warmup_steps: 2000 # 4%
+learning_rate: 1.0e-4
+
+# Extra
+autoregressive: true
+screenshot_llama: true
+ignore_white_patches: true
+norm_pix_loss: true

@@ -9,3 +9,4 @@ scikit-learn
 scipy
 pillow
 pybind11
+flash-attn==2.5.5

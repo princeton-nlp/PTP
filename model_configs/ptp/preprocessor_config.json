@@ -1,11 +1,11 @@
 {
   "do_convert_rgb": true,
-  "do_normalize": true,
-  "image_processor_type": "Pix2StructImageProcessor",
+  "do_normalize": false,
+  "image_processor_type": "PTPImageProcessor",
   "max_patches": 2048,
   "patch_size": {
     "height": 16,
     "width": 16
   },
-  "processor_class": "Pix2StructProcessor"
+  "processor_class": "PTPProcessor"
 }

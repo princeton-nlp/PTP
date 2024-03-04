@@ -160,3 +160,8 @@ cython_debug/
 #.idea/
 
 .venv*
+data
+wandb
+result
+slurm
+slurm_test.sh

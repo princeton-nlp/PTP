@@ -1,0 +1,58 @@
+
+# Path
+config_name: model_configs/screenshot-llama-380m
+tokenizer_name: model_configs/screenshot-llama-380m
+output_dir: result/my-screenshot-llama-380m
+run_name: my-screenshot-llama-380m
+train_file: data/wikibook_512_llama_tk_train.npy
+validation_file: data/wikibook_512_llama_tk_val.npy
+
+# Speedup
+flash_attn: true
+dataloader_num_workers: 8
+
+# Logging
+do_eval: true
+do_train: true
+eval_steps: 10000
+evaluation_strategy: steps
+save_steps: 100000
+save_strategy: steps
+save_total_limit: 10
+log_eval_image_pred: true
+logging_steps: 10
+
+# Rendering
+rendered_as_target: true
+replace_new_line: true
+add_black_patch: false
+add_prefix: false
+
+# Image size
+font_size: 10
+line_space: 6
+height: 16
+width: 8192
+patch_height: 16
+patch_width: 16
+
+# Length
+block_size: 512 # Total text tokens (split into 256 + 256)
+ar_image_block_size: 256 # Text tokens rendered as screenshot
+total_block_size: 768 # Total length of patch tokens (~512) + text (~256)
+
+# Optimization
+lr_scheduler_type: "cosine"
+num_train_epochs: 16
+per_device_eval_batch_size: 32
+per_device_train_batch_size: 32
+warmup_steps: 50000
+learning_rate: 1.5e-4
+weight_decay: 0.05
+
+# Extra
+fp16: true
+autoregressive: true
+screenshot_llama: true
+ignore_white_patches: true
+norm_pix_loss: true
