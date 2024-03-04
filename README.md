@@ -2,6 +2,9 @@
 
 This repository contains the code, data, and models for paper [Improving Language Understanding from Screenshots](https://arxiv.org/abs/2402.14073). In this paper, we focus on improving the language understanding ability of "screenshot LM" (models that process everything -- including text -- within visual inputs) and propose patch-and-text prediction (PTP), a novel pre-training objective for screenshot LMs. 
 
+![Illustration for PTP](imgs/ptp.png)
+
+
 ## Quick Links
 
   - [Environment](#environment)
@@ -22,7 +25,8 @@ Then, install all the required packages by running:
 pip install -r requirements.txt
 ```
 
-We strongly recommend using the exact same `transformers` and `accelerate` versions for best reproducibility.
+We strongly recommend using the exact same `transformers` and `accelerate` versions for best reproducibility. Please checkout the [renderer readme](./rendering/src) to make sure that the renderer is correctly configured. 
+
 
 ## Preparing the data
 
