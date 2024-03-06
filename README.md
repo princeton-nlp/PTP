@@ -30,7 +30,7 @@ We strongly recommend using the exact same `transformers` and `accelerate` versi
 
 ## Preparing the data
 
-For our encode-decoder experiments and the train-from-scratch autoregressive screenshot LM experiments, we use Wikipedia+BookCorpus as the pre-training data. You can find the already-tokenized dataset from [this Huggingface website](https://huggingface.co/datasets/princeton-nlp/ptp_data). You can download the data by
+For our encoder-decoder experiments and the train-from-scratch autoregressive screenshot LM experiments, we use Wikipedia+BookCorpus as the pre-training data. You can find the already-tokenized dataset from [this Huggingface website](https://huggingface.co/datasets/princeton-nlp/ptp_data). You can download the data by
 ```bash
 git clone https://huggingface.co/datasets/princeton-nlp/ptp_data data
 ```
