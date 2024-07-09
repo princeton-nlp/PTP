@@ -77,8 +77,9 @@ Please cite our paper if you use PTP in your work:
 
 ```bibtex
 @article{gao2024improving,
-   title={Improving Language Understanding from Screenshots},
-   author={Gao, Tianyu and Wang, Zirui and Bhaskar, Adithya and Chen, Danqi},
-   year={2024}
+  title={Improving Language Understanding from Screenshots},
+  author={Gao, Tianyu and Wang, Zirui and Bhaskar, Adithya and Chen, Danqi},
+  journal={arXiv preprint arXiv:2402.14073},
+  year={2024}
 }
 ```
